@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.proyector6.FirstFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_first" />
+
+    <fragment
+        android:id="@+id/nav_agentes"
+        android:name="com.example.proyector6.SecondFragment"
+        android:label="@string/menu_agentes"
+        tools:layout="@layout/fragment_second" >
+        <action
+            android:id="@+id/action_nav_agentes_to_informacionAgente"
+            app:destination="@id/informacionAgente" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_mapas"
+        android:name="com.example.proyector6.MapasFragment"
+        android:label="@string/menu_mapas"
+        tools:layout="@layout/fragment_mapas" />
+
+    <fragment
+        android:id="@+id/nav_tacticas"
+        android:name="com.example.proyector6.TacticasFragment"
+        android:label="@string/menu_tacticas"
+        tools:layout="@layout/fragment_tacticas" />
+    <fragment
+        android:id="@+id/informacionAgente"
+        android:name="com.example.proyector6.InformacionAgente"
+        android:label="InformacionAgente" />
+
+</navigation>
