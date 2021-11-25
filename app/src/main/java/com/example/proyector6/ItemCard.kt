@@ -1,3 +1,3 @@
 package com.example.proyector6
 
-class ItemCard(var imagen:ByteArray)
+class ItemCard(var imagen:ByteArray, val nombre: String)

@@ -1,8 +1,9 @@
 package com.example.proyector6
 
+import android.graphics.BitmapFactory
 import android.view.*
 import android.widget.ImageView
-import androidx.appcompat.widget.Toolbar
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class ItemCardAdapter(var items: ArrayList<ItemCard>) : RecyclerView.Adapter<ItemCardAdapter.TarjViewHolder>() {
@@ -12,14 +13,19 @@ class ItemCardAdapter(var items: ArrayList<ItemCard>) : RecyclerView.Adapter<Ite
     class TarjViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         var imagen: ImageView
+        val text: TextView
 
         init {
             imagen = itemView.findViewById(R.id.ivImage)
+            text = itemView.findViewById(R.id.nombre)
         }
 
-        fun bindTarjeta(t: ItemCard, onClick: (View) -> Unit) = with(itemView) {
-            imagen.setImageResource(t.imagen)
-            setOnClickListener { onClick(itemView) }
+        fun bindCards(t: ItemCard) {
+            val img = t.imagen
+            val imgBmp = BitmapFactory.decodeByteArray(img, 0, img.size)
+            imagen.setImageBitmap(imgBmp)
+
+            text.text = t.nombre
         }
     }
 
@@ -30,8 +36,7 @@ class ItemCardAdapter(var items: ArrayList<ItemCard>) : RecyclerView.Adapter<Ite
 
     override fun onBindViewHolder(viewHolder: TarjViewHolder, pos: Int) {
         val itemCard = items[pos]
-        viewHolder.bindTarjeta(itemCard, onClick)
-
+        viewHolder.bindCards(itemCard)
     }
 
     override fun getItemCount(): Int {

@@ -5,10 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.Toolbar
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.proyector6.databinding.FragmentSecondBinding
 
 /**
@@ -39,13 +38,13 @@ class SecondFragment : Fragment() {
         items = ArrayList()
 
         var bdg: SQLiteGestor? = null
-        bdg = SQLiteGestor(this, "ProyectoR6.sqlite")
+        bdg = SQLiteGestor(view.context, "ProyectoR6.sqlite")
         val bd = bdg.readableDatabase
 
-        val rs = bd.rawQuery("SELECT * FROM LOCAL", null)
+        val rs = bd.rawQuery("SELECT * FROM Agentes", null)
 
         while (rs.moveToNext())
-            items!!.add(ItemCard(rs.getBlob(1)))
+            items!!.add(ItemCard(rs.getBlob(2),rs.getString(0)))
 
         rs.close()
         bd.close()
@@ -59,7 +58,7 @@ class SecondFragment : Fragment() {
         val adaptador = ItemCardAdapter(items)
 
         recView.adapter = adaptador
-        recView.layoutManager = LinearLayoutManager(view.context, LinearLayoutManager.VERTICAL, false)
+        recView.layoutManager = GridLayoutManager(view.context,2)
     }
 
 //    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

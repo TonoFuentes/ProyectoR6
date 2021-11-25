@@ -6,13 +6,13 @@ import android.database.sqlite.SQLiteOpenHelper
 import java.io.File
 
 
-class SQLiteGestor(context: SecondFragment, name: String) : SQLiteOpenHelper(context, name,null,1) {
+class SQLiteGestor(context: Context, name: String) : SQLiteOpenHelper(context, name,null,1) {
     private val myContext: Context? = null
 
     init {
 
         val PATH_BD = "/data/data/" + context.packageName + "/databases"
-        val NOM_BD = "proyector6.sqlite"
+        val NOM_BD = "ProyectoR6.sqlite"
         val dir = File(PATH_BD)
         if (!dir.exists())
             dir.mkdir()

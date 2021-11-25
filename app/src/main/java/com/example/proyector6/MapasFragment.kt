@@ -6,6 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.proyector6.databinding.FragmentSecondBinding
 
 /**
@@ -14,6 +17,7 @@ import com.example.proyector6.databinding.FragmentSecondBinding
 class MapasFragment : Fragment() {
 
     private var _binding: FragmentSecondBinding? = null
+    private lateinit var items: ArrayList<ItemCard>
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -32,9 +36,30 @@ class MapasFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        binding.buttonSecond.setOnClickListener {
-//            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
-//        }
+        items = ArrayList()
+
+        var bdg: SQLiteGestor? = null
+        bdg = SQLiteGestor(view.context, "ProyectoR6.sqlite")
+        val bd = bdg.readableDatabase
+
+        val rs = bd.rawQuery("SELECT * FROM Mapas", null)
+
+        while (rs.moveToNext())
+            items!!.add(ItemCard(rs.getBlob(2),rs.getString(0)))
+
+        rs.close()
+        bd.close()
+        bdg.close()
+
+//        val toolbar = findViewById(R.id.toolbar) as Toolbar
+//        setSupportActionBar(toolbar)
+
+        val recView = view.findViewById(R.id.recView) as RecyclerView
+        recView.setHasFixedSize(true)
+        val adaptador = ItemCardAdapter(items)
+
+        recView.adapter = adaptador
+        recView.layoutManager = LinearLayoutManager(view.context, LinearLayoutManager.VERTICAL, false)
     }
 
     override fun onDestroyView() {
