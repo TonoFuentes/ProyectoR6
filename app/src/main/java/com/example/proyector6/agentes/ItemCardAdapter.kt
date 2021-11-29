@@ -1,10 +1,11 @@
-package com.example.proyector6
+package com.example.proyector6.agentes
 
 import android.graphics.BitmapFactory
 import android.view.*
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.proyector6.R
 
 class ItemCardAdapter(var items: ArrayList<ItemCard>) : RecyclerView.Adapter<ItemCardAdapter.TarjViewHolder>() {
     lateinit var onClick : (View) -> Unit

@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.proyector6.FirstFragment"
+        android:name="com.example.proyector6.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_first" />
 
     <fragment
         android:id="@+id/nav_agentes"
-        android:name="com.example.proyector6.SecondFragment"
+        android:name="com.example.proyector6.agentes.AgenteFragment"
         android:label="@string/menu_agentes"
         tools:layout="@layout/fragment_second" >
         <action
@@ -23,18 +23,18 @@
 
     <fragment
         android:id="@+id/nav_mapas"
-        android:name="com.example.proyector6.MapasFragment"
+        android:name="com.example.proyector6.mapas.MapasFragment"
         android:label="@string/menu_mapas"
         tools:layout="@layout/fragment_mapas" />
 
     <fragment
         android:id="@+id/nav_tacticas"
-        android:name="com.example.proyector6.TacticasFragment"
+        android:name="com.example.proyector6.tacticas.TacticasFragment"
         android:label="@string/menu_tacticas"
         tools:layout="@layout/fragment_tacticas" />
     <fragment
         android:id="@+id/informacionAgente"
-        android:name="com.example.proyector6.InformacionAgente"
+        android:name="com.example.proyector6.agentes.InformacionAgente"
         android:label="InformacionAgente" />
 
 </navigation>

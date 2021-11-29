@@ -1,11 +1,11 @@
-package com.example.proyector6
+package com.example.proyector6.mapas
 
 import android.graphics.BitmapFactory
 import android.view.*
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toolbar
 import androidx.recyclerview.widget.RecyclerView
+import com.example.proyector6.R
 
 class MapasCardAdapter(var items: ArrayList<MapasCard>) : RecyclerView.Adapter<MapasCardAdapter.TarjViewHolder>() {
     lateinit var onClick : (View) -> Unit
@@ -13,25 +13,25 @@ class MapasCardAdapter(var items: ArrayList<MapasCard>) : RecyclerView.Adapter<M
 
     class TarjViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        var imagen: ImageView
-        val nombre: Toolbar
+        var imagen: ImageView?
+        val nombre: TextView
 
         init {
             imagen = itemView.findViewById(R.id.mapa)
-            nombre
+            nombre = itemView.findViewById(R.id.nombreMapa)
         }
 
         fun bindCards(t: MapasCard) {
             val img = t.imagen
             val imgBmp = BitmapFactory.decodeByteArray(img, 0, img.size)
-            imagen.setImageBitmap(imgBmp)
+            imagen?.setImageBitmap(imgBmp)
 
-            text.text = t.nombre
+            nombre.text = t.nombre
         }
     }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): TarjViewHolder {
-        val itemView = LayoutInflater.from(viewGroup.context).inflate(R.layout.item_layout, viewGroup, false)
+        val itemView = LayoutInflater.from(viewGroup.context).inflate(R.layout.mapa_layout, viewGroup, false)
         return TarjViewHolder(itemView)
     }
 

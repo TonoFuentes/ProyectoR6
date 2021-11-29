@@ -1,23 +1,24 @@
-package com.example.proyector6
+package com.example.proyector6.agentes
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.proyector6.R
+import com.example.proyector6.SQLiteGestor
 import com.example.proyector6.databinding.FragmentSecondBinding
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
-class MapasFragment : Fragment() {
+class AgenteFragment : Fragment() {
 
     private var _binding: FragmentSecondBinding? = null
     private lateinit var items: ArrayList<ItemCard>
+
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -30,7 +31,6 @@ class MapasFragment : Fragment() {
 
         _binding = FragmentSecondBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -42,7 +42,7 @@ class MapasFragment : Fragment() {
         bdg = SQLiteGestor(view.context, "ProyectoR6.sqlite")
         val bd = bdg.readableDatabase
 
-        val rs = bd.rawQuery("SELECT * FROM Mapas", null)
+        val rs = bd.rawQuery("SELECT * FROM Agentes", null)
 
         while (rs.moveToNext())
             items!!.add(ItemCard(rs.getBlob(2),rs.getString(0)))
@@ -59,8 +59,16 @@ class MapasFragment : Fragment() {
         val adaptador = ItemCardAdapter(items)
 
         recView.adapter = adaptador
-        recView.layoutManager = LinearLayoutManager(view.context, LinearLayoutManager.VERTICAL, false)
+        recView.layoutManager = GridLayoutManager(view.context,2)
     }
+
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//
+//        binding.buttonSecond.setOnClickListener {
+//            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+//        }
+//    }
 
     override fun onDestroyView() {
         super.onDestroyView()
