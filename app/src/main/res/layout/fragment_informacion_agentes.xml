@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/principal_movil"
-    tools:context=".agentes.AgenteFragment">
+    tools:context=".HomeFragment" >
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarTacticas"
+        android:id="@+id/toolbarHome"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/gris"
@@ -21,38 +21,41 @@
         tools:ignore="MissingConstraints" />
 
     <androidx.cardview.widget.CardView
-        android:layout_width="374dp"
-        android:layout_height="286dp"
-        app:cardBackgroundColor="@color/gris_oscuro"
+        android:layout_width="377dp"
+        android:layout_height="587dp"
+        android:background="@color/gris"
+        app:cardBackgroundColor="@color/gris"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbarTacticas"
-        app:layout_constraintVertical_bias="0.615">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.666">
+
+        <TextView
+            android:id="@+id/NombreAgente"
+            android:layout_width="103dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="70dp"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:text="Gridlock" />
+
+        <TextView
+            android:id="@+id/Equipo"
+            android:layout_width="103dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="90dp"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:text="GIGN" />
 
         <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="262dp"
-            android:layout_height="380dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="2dp"
-            android:src="@drawable/mira" />
-
-        <Button
-            android:id="@+id/listar"
-            android:layout_width="166dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="30dp"
-            android:text="Listar Tacticas" />
-
-        <Button
-            android:id="@+id/crear"
-            android:layout_width="166dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="195dp"
-            android:layout_marginTop="30dp"
-            android:text="Crear Tactica" />
+            android:id="@+id/imageView"
+            android:layout_width="148dp"
+            android:layout_height="234dp"
+            android:layout_marginStart="210dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/clipart1971197" />
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

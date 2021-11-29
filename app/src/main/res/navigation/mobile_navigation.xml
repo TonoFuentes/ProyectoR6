@@ -9,13 +9,13 @@
         android:id="@+id/nav_home"
         android:name="com.example.proyector6.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_first" />
+        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_agentes"
         android:name="com.example.proyector6.agentes.AgenteFragment"
         android:label="@string/menu_agentes"
-        tools:layout="@layout/fragment_second" >
+        tools:layout="@layout/fragment_agentes" >
         <action
             android:id="@+id/action_nav_agentes_to_informacionAgente"
             app:destination="@id/informacionAgente" />

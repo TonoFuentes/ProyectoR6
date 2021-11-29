@@ -5,18 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyector6.R
 import com.example.proyector6.SQLiteGestor
-import com.example.proyector6.databinding.FragmentSecondBinding
+import com.example.proyector6.databinding.FragmentMapasBinding
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
 class MapasFragment : Fragment() {
 
-    private var _binding: FragmentSecondBinding? = null
+    private var _binding: FragmentMapasBinding? = null
     private lateinit var items: ArrayList<MapasCard>
 
     // This property is only valid between onCreateView and
@@ -28,13 +29,16 @@ class MapasFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentSecondBinding.inflate(inflater, container, false)
+        _binding = FragmentMapasBinding.inflate(inflater, container, false)
         return binding.root
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val tb = view.findViewById<Toolbar>(R.id.toolbarMapas)
+        tb.setTitle("Mapas")
 
         items = ArrayList()
 
