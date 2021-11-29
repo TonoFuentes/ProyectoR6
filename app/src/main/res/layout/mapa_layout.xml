@@ -3,12 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="230dp">
+    android:layout_height="230dp"
+    android:background="@android:color/transparent">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="364dp"
+        android:layout_width="352dp"
         android:layout_height="197dp"
         android:layout_marginStart="20dp"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -27,7 +29,7 @@
             android:id="@+id/fondo2"
             android:layout_width="match_parent"
             android:layout_height="41dp"
-            android:layout_marginTop="155dp"
+            android:layout_marginTop="156dp"
             android:alpha="0.6"
             android:background="#090909" />
 

@@ -37,9 +37,9 @@ class TacticasFragment : Fragment() {
         val tb = view.findViewById<Toolbar>(R.id.toolbarTacticas)
         tb.setTitle("Tacticas")
 
-//        binding.buttonSecond.setOnClickListener {
-//            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
-//        }
+        binding.crear.setOnClickListener {
+            findNavController().navigate(R.id.action_nav_tacticas_to_fragmentCrearTactica)
+        }
     }
 
     override fun onDestroyView() {

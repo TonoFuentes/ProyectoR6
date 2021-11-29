@@ -15,11 +15,7 @@
         android:id="@+id/nav_agentes"
         android:name="com.example.proyector6.agentes.AgenteFragment"
         android:label="@string/menu_agentes"
-        tools:layout="@layout/fragment_agentes" >
-        <action
-            android:id="@+id/action_nav_agentes_to_informacionAgente"
-            app:destination="@id/informacionAgente" />
-    </fragment>
+        tools:layout="@layout/fragment_agentes" />
 
     <fragment
         android:id="@+id/nav_mapas"
@@ -31,10 +27,15 @@
         android:id="@+id/nav_tacticas"
         android:name="com.example.proyector6.tacticas.TacticasFragment"
         android:label="@string/menu_tacticas"
-        tools:layout="@layout/fragment_tacticas" />
+        tools:layout="@layout/fragment_tacticas" >
+        <action
+            android:id="@+id/action_nav_tacticas_to_fragmentCrearTactica"
+            app:destination="@id/fragmentCrearTactica" />
+    </fragment>
     <fragment
-        android:id="@+id/informacionAgente"
-        android:name="com.example.proyector6.agentes.InformacionAgente"
-        android:label="InformacionAgente" />
+        android:id="@+id/fragmentCrearTactica"
+        android:name="com.example.proyector6.tacticas.FragmentCrearTactica"
+        android:label="fragment_crear_tactica"
+        tools:layout="@layout/fragment_crear_tactica" />
 
 </navigation>
