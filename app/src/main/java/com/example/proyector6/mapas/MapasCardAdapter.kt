@@ -17,8 +17,8 @@ class MapasCardAdapter(var items: ArrayList<MapasCard>) : RecyclerView.Adapter<M
         val nombre: TextView
 
         init {
-            imagen = itemView.findViewById(R.id.mapa)
-            nombre = itemView.findViewById(R.id.nombreMapa)
+            imagen = itemView.findViewById(R.id.Imagenmapa)
+            nombre = itemView.findViewById(R.id.Mapa)
         }
 
         fun bindCards(t: MapasCard) {

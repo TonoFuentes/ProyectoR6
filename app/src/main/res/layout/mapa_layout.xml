@@ -19,7 +19,7 @@
         app:layout_constraintVertical_bias="0.136">
 
         <ImageView
-            android:id="@+id/mapa"
+            android:id="@+id/Imagenmapa"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/ic_launcher_foreground"
@@ -34,7 +34,7 @@
             android:background="#090909" />
 
         <TextView
-            android:id="@+id/nombreMapa"
+            android:id="@+id/Mapa"
             android:layout_width="136dp"
             android:layout_height="33dp"
             android:layout_marginLeft="115dp"
