@@ -23,8 +23,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="377dp"
         android:layout_height="587dp"
-        android:background="@color/gris"
-        app:cardBackgroundColor="@color/gris"
+        android:background="@color/gris_texto"
+        app:cardBackgroundColor="@color/gris_texto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.47"
@@ -36,26 +36,102 @@
             android:id="@+id/NombreAgente"
             android:layout_width="103dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginStart="85dp"
+            android:layout_marginTop="40dp"
             android:gravity="center|center_horizontal|center_vertical"
-            android:text="Gridlock" />
+            android:text="Thermite" />
 
         <TextView
             android:id="@+id/Equipo"
             android:layout_width="103dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="90dp"
+            android:layout_marginStart="85dp"
+            android:layout_marginTop="60dp"
             android:gravity="center|center_horizontal|center_vertical"
-            android:text="GIGN" />
+            android:text="SWAT" />
+
+        <TextView
+            android:id="@+id/bando"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="100dp"
+            android:text="Bando Atacante"
+            android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/iconoAgente"
+            android:layout_width="69dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/clipart1971197" />
+
+        <ImageView
+            android:id="@+id/imgCompleta"
             android:layout_width="148dp"
-            android:layout_height="234dp"
+            android:layout_height="265dp"
             android:layout_marginStart="210dp"
             android:layout_marginTop="20dp"
-            android:src="@drawable/clipart1971197" />
+            android:src="@drawable/thermite" />
+
+        <TextView
+            android:id="@+id/rol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="125dp"
+            android:text="ROL"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="209dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="150dp"
+            android:background="?android:attr/listDivider" />
+
+        <TextView
+            android:id="@+id/rol_texto"
+            android:layout_width="187dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="155dp"
+            android:text="Retaguardia, Demolicion Pesada" />
+
+        <TextView
+            android:id="@+id/salud"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="200dp"
+            android:text="Salud =  2"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/velocidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="220dp"
+            android:text="Velocidad =  2"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dificultad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="240dp"
+            android:text="Dificultad =  1"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="300dp"
+            android:background="?android:attr/listDivider" />
+
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

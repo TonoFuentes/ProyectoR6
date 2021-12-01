@@ -1,8 +1,10 @@
 package com.example.proyector6.agentes
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
@@ -18,7 +20,9 @@ import com.example.proyector6.databinding.FragmentAgentesBinding
 class AgenteFragment : Fragment() {
 
     private var _binding: FragmentAgentesBinding? = null
-    private lateinit var items: ArrayList<ItemCard>
+    private lateinit var itemsTodos: ArrayList<ItemCard>
+    private lateinit var itemsAtacantes: ArrayList<ItemCard>
+    private lateinit var itemsDefensores: ArrayList<ItemCard>
 
 
     // This property is only valid between onCreateView and
@@ -34,36 +38,95 @@ class AgenteFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("Recycle")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val tb = view.findViewById<Toolbar>(R.id.toolbarAgentes)
-        tb.setTitle("Agentes")
+        //Instanciacion del arraylist de items
+        itemsTodos = ArrayList()
+        itemsAtacantes = ArrayList()
+        itemsDefensores = ArrayList()
 
-        items = ArrayList()
 
+        //Variables de conexion con la base de datos
         var bdg: SQLiteGestor? = null
         bdg = SQLiteGestor(view.context, "ProyectoR6.sqlite")
-        val bd = bdg.readableDatabase
+        val bd = bdg.readableDatabase //Sentencia para leer de la BDD
 
+
+        //Sentencias para hacer una consulta mediante SQL
         val rs = bd.rawQuery("SELECT * FROM Agentes", null)
 
+
+        //moveToNext es importante usarlo primero para poder ir pasando entre los diferentes datos de las filas
         while (rs.moveToNext())
-            items!!.add(ItemCard(rs.getBlob(2),rs.getString(0)))
+            itemsTodos!!.add(ItemCard(rs.getBlob(2),rs.getString(0),rs.getString(1)))
 
-        rs.close()
-        bd.close()
-        bdg.close()
 
-//        val toolbar = view.findViewById(R.id.toolbar) as Toolbar
-//        setSupportActionBar(toolbar)
+        //Distribucion de los agentes
+        for (agente in itemsTodos){
+            if (agente.bando.equals("Atacante")) {
+                itemsAtacantes.add(agente)
+            } else {
+                itemsDefensores.add(agente)
+            }
+        }
 
+
+        //Sentencias para rellenar el recView con los datos de la BDD
         val recView = view.findViewById(R.id.recViewAgentes) as RecyclerView
         recView.setHasFixedSize(true)
-        val adaptador = ItemCardAdapter(items)
+        var adaptador:ItemCardAdapter
+        adaptador = ItemCardAdapter(itemsTodos)
 
         recView.adapter = adaptador
         recView.layoutManager = GridLayoutManager(view.context,2)
+        adaptador.onClick = {
+
+        }
+
+
+        //Declaracion de una toolbar y sus menus
+        val tb = view.findViewById<Toolbar>(R.id.toolbarAgentes)
+        tb.setTitle("Agentes")
+        //setSupportActionBar(toolbar)
+        tb.inflateMenu(R.menu.menu_agentes)
+
+        tb.setOnMenuItemClickListener { item ->
+            when (item.itemId) {
+                (R.id.action_todos) -> {
+                    adaptador = ItemCardAdapter(itemsTodos)
+                    recView.adapter = adaptador
+                    recView.layoutManager = GridLayoutManager(view.context,2)
+                    adaptador.onClick = {
+
+                    }
+                }
+                (R.id.action_atacantes) -> {
+                    adaptador = ItemCardAdapter(itemsAtacantes)
+                    recView.adapter = adaptador
+                    recView.layoutManager = GridLayoutManager(view.context,2)
+                    adaptador.onClick = {
+
+                    }
+                }
+                (R.id.action_defensores) -> {
+                    adaptador = ItemCardAdapter(itemsDefensores)
+                    recView.adapter = adaptador
+                    recView.layoutManager = GridLayoutManager(view.context,2)
+                    adaptador.onClick = {
+
+                    }
+                }
+            }
+            true
+        }
+
+
+        //Cierre de la conexion con la BDD
+        rs.close()
+        bd.close()
+        bdg.close()
     }
 
     override fun onDestroyView() {

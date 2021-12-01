@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/action_todos"
+        android:orderInCategory="100"
+        android:title="@string/agente_todos"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_atacantes"
+        android:orderInCategory="100"
+        android:title="@string/agente_atacantes"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_defensores"
+        android:orderInCategory="100"
+        android:title="@string/agente_defensores"
+        app:showAsAction="always" />
+</menu>

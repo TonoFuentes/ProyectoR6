@@ -17,4 +17,9 @@
     <string name="menu_tacticas">Tacticas</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Strings de menus -->
+    <string name="agente_todos">Todos</string>
+    <string name="agente_atacantes">Atacantes</string>
+    <string name="agente_defensores">Defensores</string>
 </resources>

@@ -42,8 +42,8 @@
                 android:layout_marginTop="20dp"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:text="Nombre Tactica" />
+                android:hint="Nombre Tactica"
+                android:minHeight="48dp"/>
 
             <AutoCompleteTextView
                 android:id="@+id/nAgente"
@@ -52,6 +52,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="80dp"
                 android:minHeight="48dp"
+                android:hint="Nombre de Agente"
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <AutoCompleteTextView
@@ -61,17 +62,21 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="150dp"
                 android:minHeight="48dp"
+                android:hint="Nombre de Mapa"
                 tools:ignore="SpeakableTextPresentCheck" />
 
-            <EditText
-                android:id="@+id/Descripcion"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="370dp"
                 android:layout_height="293dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="220dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                tools:ignore="SpeakableTextPresentCheck" />
+                android:layout_marginTop="220dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Descripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Descripcion" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:id="@+id/aceptar"
