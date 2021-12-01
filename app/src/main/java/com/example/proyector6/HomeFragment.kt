@@ -32,8 +32,8 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val tb = view.findViewById<Toolbar>(R.id.toolbarHome)
-        tb.setTitle("Home")
+//        val tb = view.findViewById<Toolbar>(R.id.toolbarHome)
+//        tb.setTitle("Home")
     }
 
     override fun onDestroyView() {

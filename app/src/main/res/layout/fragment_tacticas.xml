@@ -7,19 +7,6 @@
     android:background="@drawable/principal_movil"
     tools:context=".agentes.AgenteFragment">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarTacticas"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/gris"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints" />
-
     <androidx.cardview.widget.CardView
         android:layout_width="374dp"
         android:layout_height="286dp"
@@ -28,8 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbarTacticas"
-        app:layout_constraintVertical_bias="0.615">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageView2"

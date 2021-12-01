@@ -5,14 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.proyector6.databinding.FragmentAgentesBinding
+import com.example.proyector6.databinding.FragmentInformacionAgentesBinding
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
 class InformacionAgente : Fragment() {
 
-    private var _binding: FragmentAgentesBinding? = null
+    private var _binding: FragmentInformacionAgentesBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -23,7 +23,7 @@ class InformacionAgente : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentAgentesBinding.inflate(inflater, container, false)
+        _binding = FragmentInformacionAgentesBinding.inflate(inflater, container, false)
         return binding.root
 
     }

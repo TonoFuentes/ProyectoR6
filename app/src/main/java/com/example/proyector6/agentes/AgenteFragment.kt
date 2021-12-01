@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.proyector6.R
 import com.example.proyector6.SQLiteGestor
 import com.example.proyector6.databinding.FragmentAgentesBinding
+import kotlinx.android.synthetic.main.fragment_agentes.*
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -86,41 +87,32 @@ class AgenteFragment : Fragment() {
             findNavController().navigate(R.id.action_nav_agentes_to_informacionAgente)
         }
 
-
-        //Declaracion de una toolbar y sus menus
-        val tb = view.findViewById<Toolbar>(R.id.toolbarAgentes)
-        tb.setTitle("Agentes")
-        //setSupportActionBar(toolbar)
-        tb.inflateMenu(R.menu.menu_agentes)
-
-        tb.setOnMenuItemClickListener { item ->
-            when (item.itemId) {
-                (R.id.action_todos) -> {
-                    adaptador = ItemCardAdapter(itemsTodos)
-                    recView.adapter = adaptador
-                    recView.layoutManager = GridLayoutManager(view.context,2)
-                    adaptador.onClick = {
-                        findNavController().navigate(R.id.action_nav_agentes_to_informacionAgente)
-                    }
-                }
-                (R.id.action_atacantes) -> {
-                    adaptador = ItemCardAdapter(itemsAtacantes)
-                    recView.adapter = adaptador
-                    recView.layoutManager = GridLayoutManager(view.context,2)
-                    adaptador.onClick = {
-                        findNavController().navigate(R.id.action_nav_agentes_to_informacionAgente)
-                    }
-                }
-                (R.id.action_defensores) -> {
-                    adaptador = ItemCardAdapter(itemsDefensores)
-                    recView.adapter = adaptador
-                    recView.layoutManager = GridLayoutManager(view.context,2)
-                    adaptador.onClick = {
-                        findNavController().navigate(R.id.action_nav_agentes_to_informacionAgente)
-                    }
-                }
+        //Filtro para los agentes segun la eleccion
+        btnTodos.setOnClickListener {
+            adaptador = ItemCardAdapter(itemsTodos)
+            recView.adapter = adaptador
+            recView.layoutManager = GridLayoutManager(view.context,2)
+            adaptador.onClick = {
+                findNavController().navigate(R.id.action_nav_agentes_to_informacionAgente)
             }
-            true
+        }
+
+        btnAtacantes.setOnClickListener {
+            adaptador = ItemCardAdapter(itemsAtacantes)
+            recView.adapter = adaptador
+            recView.layoutManager = GridLayoutManager(view.context,2)
+            adaptador.onClick = {
+                findNavController().navigate(R.id.action_nav_agentes_to_informacionAgente)
+            }
+        }
+
+        btnDefensores.setOnClickListener {
+            adaptador = ItemCardAdapter(itemsDefensores)
+            recView.adapter = adaptador
+            recView.layoutManager = GridLayoutManager(view.context,2)
+            adaptador.onClick = {
+                findNavController().navigate(R.id.action_nav_agentes_to_informacionAgente)
+            }
         }
 
 
