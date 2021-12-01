@@ -15,7 +15,11 @@
         android:id="@+id/nav_agentes"
         android:name="com.example.proyector6.agentes.AgenteFragment"
         android:label="@string/menu_agentes"
-        tools:layout="@layout/fragment_agentes" />
+        tools:layout="@layout/fragment_agentes" >
+        <action
+            android:id="@+id/action_nav_agentes_to_informacionAgente"
+            app:destination="@id/informacionAgente" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_mapas"
@@ -49,5 +53,9 @@
         android:name="com.example.proyector6.tacticas.ListarTacticas"
         android:label="fragment_listar_tacticas"
         tools:layout="@layout/fragment_listar_tacticas" />
+    <fragment
+        android:id="@+id/informacionAgente"
+        android:name="com.example.proyector6.agentes.InformacionAgente"
+        android:label="InformacionAgente" />
 
 </navigation>

@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyector6.R
@@ -82,7 +83,7 @@ class AgenteFragment : Fragment() {
         recView.adapter = adaptador
         recView.layoutManager = GridLayoutManager(view.context,2)
         adaptador.onClick = {
-
+            findNavController().navigate(R.id.action_nav_agentes_to_informacionAgente)
         }
 
 
@@ -99,7 +100,7 @@ class AgenteFragment : Fragment() {
                     recView.adapter = adaptador
                     recView.layoutManager = GridLayoutManager(view.context,2)
                     adaptador.onClick = {
-
+                        findNavController().navigate(R.id.action_nav_agentes_to_informacionAgente)
                     }
                 }
                 (R.id.action_atacantes) -> {
@@ -107,7 +108,7 @@ class AgenteFragment : Fragment() {
                     recView.adapter = adaptador
                     recView.layoutManager = GridLayoutManager(view.context,2)
                     adaptador.onClick = {
-
+                        findNavController().navigate(R.id.action_nav_agentes_to_informacionAgente)
                     }
                 }
                 (R.id.action_defensores) -> {
@@ -115,7 +116,7 @@ class AgenteFragment : Fragment() {
                     recView.adapter = adaptador
                     recView.layoutManager = GridLayoutManager(view.context,2)
                     adaptador.onClick = {
-
+                        findNavController().navigate(R.id.action_nav_agentes_to_informacionAgente)
                     }
                 }
             }
