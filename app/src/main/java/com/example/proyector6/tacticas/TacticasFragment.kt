@@ -40,6 +40,10 @@ class TacticasFragment : Fragment() {
         binding.crear.setOnClickListener {
             findNavController().navigate(R.id.action_nav_tacticas_to_fragmentCrearTactica)
         }
+
+        binding.listar.setOnClickListener{
+            findNavController().navigate(R.id.action_nav_tacticas_to_listarTacticas)
+        }
     }
 
     override fun onDestroyView() {

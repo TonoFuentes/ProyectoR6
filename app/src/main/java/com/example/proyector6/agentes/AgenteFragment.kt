@@ -58,21 +58,13 @@ class AgenteFragment : Fragment() {
 //        val toolbar = view.findViewById(R.id.toolbar) as Toolbar
 //        setSupportActionBar(toolbar)
 
-        val recView = view.findViewById(R.id.recView) as RecyclerView
+        val recView = view.findViewById(R.id.recViewAgentes) as RecyclerView
         recView.setHasFixedSize(true)
         val adaptador = ItemCardAdapter(items)
 
         recView.adapter = adaptador
         recView.layoutManager = GridLayoutManager(view.context,2)
     }
-
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//
-//        binding.buttonSecond.setOnClickListener {
-//            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
-//        }
-//    }
 
     override fun onDestroyView() {
         super.onDestroyView()

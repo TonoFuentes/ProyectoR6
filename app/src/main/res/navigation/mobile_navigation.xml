@@ -31,11 +31,23 @@
         <action
             android:id="@+id/action_nav_tacticas_to_fragmentCrearTactica"
             app:destination="@id/fragmentCrearTactica" />
+        <action
+            android:id="@+id/action_nav_tacticas_to_listarTacticas"
+            app:destination="@id/listarTacticas" />
     </fragment>
     <fragment
         android:id="@+id/fragmentCrearTactica"
         android:name="com.example.proyector6.tacticas.FragmentCrearTactica"
         android:label="fragment_crear_tactica"
-        tools:layout="@layout/fragment_crear_tactica" />
+        tools:layout="@layout/fragment_crear_tactica" >
+        <action
+            android:id="@+id/action_fragmentCrearTactica_to_nav_tacticas"
+            app:destination="@id/nav_tacticas" />
+    </fragment>
+    <fragment
+        android:id="@+id/listarTacticas"
+        android:name="com.example.proyector6.tacticas.ListarTacticas"
+        android:label="fragment_listar_tacticas"
+        tools:layout="@layout/fragment_listar_tacticas" />
 
 </navigation>

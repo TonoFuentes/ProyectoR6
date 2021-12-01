@@ -31,7 +31,7 @@ class ItemCardAdapter(var items: ArrayList<ItemCard>) : RecyclerView.Adapter<Ite
     }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): TarjViewHolder {
-        val itemView = LayoutInflater.from(viewGroup.context).inflate(R.layout.item_layout, viewGroup, false)
+        val itemView = LayoutInflater.from(viewGroup.context).inflate(R.layout.agente_layout, viewGroup, false)
         return TarjViewHolder(itemView)
     }
 

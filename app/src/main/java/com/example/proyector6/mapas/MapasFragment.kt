@@ -58,7 +58,7 @@ class MapasFragment : Fragment() {
 //        val toolbar = findViewById(R.id.toolbar) as Toolbar
 //        setSupportActionBar(toolbar)
 
-        val recView = view.findViewById(R.id.recView) as RecyclerView
+        val recView = view.findViewById(R.id.recViewMapas) as RecyclerView
         recView.setHasFixedSize(true)
         val adaptador = MapasCardAdapter(items)
 

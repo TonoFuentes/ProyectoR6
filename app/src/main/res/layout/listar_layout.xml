@@ -18,6 +18,42 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
+        <ImageView
+            android:id="@+id/imgMapa"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="242dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/ic_launcher_foreground"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/fondoMapa"
+            android:layout_width="120dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="242dp"
+            android:layout_marginTop="41dp"
+            android:alpha="0.6"
+            android:background="#090909" />
+
+        <ImageView
+            android:id="@+id/imgAgente"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/clipart1971197" />
+
+        <TextView
+            android:id="@+id/fondoAgente"
+            android:layout_width="59dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="141dp"
+            android:layout_marginTop="50dp"
+            android:alpha="0.6"
+            android:background="#090909" />
+
         <TextView
             android:id="@+id/nombreTactica"
             android:layout_width="92dp"
@@ -25,25 +61,34 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="32dp"
             android:gravity="center|center_horizontal|center_vertical"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFCFC"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/nombreAgente"
-            android:layout_width="92dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="125dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginStart="141dp"
+            android:layout_marginTop="50dp"
             android:gravity="center|center_horizontal|center_vertical"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFCFC"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/nombreMapa"
             android:layout_width="120dp"
-            android:layout_height="45dp"
+            android:layout_height="29dp"
             android:layout_marginStart="242dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="41dp"
             android:gravity="center|center_horizontal|center_vertical"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFCFC" />
 
         <TextView
             android:id="@+id/descTactica"
@@ -51,6 +96,9 @@
             android:layout_height="59dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="80dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFCFC"
+            android:textStyle="bold"
             android:text="TextView" />
 
     </androidx.cardview.widget.CardView>

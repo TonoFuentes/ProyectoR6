@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/gris"
-        app:layout_constraintBottom_toBottomOf="@+id/recView"
+        app:layout_constraintBottom_toBottomOf="@+id/recViewAgentes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
         tools:ignore="MissingConstraints" />
 
     <androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/recView"
+    android:id="@+id/recViewAgentes"
     android:layout_width="412dp"
     android:layout_height="0dp"
     android:layout_marginStart="1dp"
