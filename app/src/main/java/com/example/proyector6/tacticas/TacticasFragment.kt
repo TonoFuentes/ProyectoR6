@@ -9,6 +9,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.navigation.fragment.findNavController
 import com.example.proyector6.R
 import com.example.proyector6.databinding.FragmentTacticasBinding
+import kotlinx.android.synthetic.main.content_main.view.*
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -34,8 +35,6 @@ class TacticasFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val tb = view.findViewById<Toolbar>(R.id.toolbarTacticas)
-        tb.setTitle("Tacticas")
 
         binding.crear.setOnClickListener {
             findNavController().navigate(R.id.action_nav_tacticas_to_fragmentCrearTactica)

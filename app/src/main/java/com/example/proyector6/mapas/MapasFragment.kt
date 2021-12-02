@@ -37,9 +37,6 @@ class MapasFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val tb = view.findViewById<Toolbar>(R.id.toolbarMapas)
-        tb.setTitle("Mapas")
-
         items = ArrayList()
 
         var bdg: SQLiteGestor? = null

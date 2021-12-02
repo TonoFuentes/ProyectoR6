@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.proyector6.R
 import com.example.proyector6.SQLiteGestor
 import com.example.proyector6.databinding.FragmentListarTacticasBinding
+import kotlinx.android.synthetic.main.content_main.view.*
 import kotlinx.android.synthetic.main.fragment_crear_tactica.*
 
 /**
@@ -39,9 +40,6 @@ class ListarTacticas : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val tb = view.findViewById<Toolbar>(R.id.toolbarListarTacticas)
-        tb.setTitle("Listar Tacticas")
 
         items = ArrayList()
 

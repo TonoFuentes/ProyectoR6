@@ -18,6 +18,7 @@ import com.example.proyector6.mapas.MapasCard
 import com.example.proyector6.mapas.MapasCardAdapter
 import com.google.android.material.snackbar.BaseTransientBottomBar.LENGTH_SHORT
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.content_main.view.*
 import kotlinx.android.synthetic.main.fragment_crear_tactica.*
 
 /**
@@ -46,8 +47,6 @@ class FragmentCrearTactica : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val tb = view.findViewById<Toolbar>(R.id.toolbarCrearTacticas)
-        tb.setTitle("Crear Tactica")
 
         val nombreAgentes = ArrayList<String>()
         val nombreMapas = ArrayList<String>()
