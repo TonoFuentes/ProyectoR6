@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyector6.R
@@ -66,7 +65,7 @@ class ListarTacticas : Fragment() {
         bd.close()
         bdg.close()
 
-        val recView = view.findViewById(R.id.recViewListarTacticas) as RecyclerView
+        val recView = view.findViewById(R.id.RVListarTacticas) as RecyclerView
         recView.setHasFixedSize(true)
         val adaptador = TacticasCardAdapter(items)
 
