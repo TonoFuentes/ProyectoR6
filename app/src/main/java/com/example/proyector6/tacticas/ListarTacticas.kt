@@ -1,10 +1,10 @@
 package com.example.proyector6.tacticas
 
 import android.os.Bundle
+import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.appcompat.view.ActionMode
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyector6.R
@@ -33,6 +33,38 @@ class ListarTacticas : Fragment() {
     ): View? {
 
         _binding = FragmentListarTacticasBinding.inflate(inflater, container, false)
+
+        var modeCallBack: ActionMode.Callback = object : ActionMode.Callback {
+            override fun onActionItemClicked(mode: ActionMode?, item: MenuItem?): Boolean {
+                val id = item?.itemId
+                when (id) {
+                    R.id.action_editar -> {
+                        Log.i("MainActivity", "editar")
+                        mode?.finish()
+                    }
+                    R.id.action_eliminar -> {
+                        Log.i("MainActivity", "eliminar")
+                        mode?.finish()
+                    }
+                    else -> return false
+                }
+                return true
+            }
+            override fun onPrepareActionMode(mode: ActionMode, menu: Menu): Boolean {
+                return false
+            }
+            override fun onDestroyActionMode(mode: ActionMode?) {
+                var mode = mode
+                mode = null
+            }
+            override fun onCreateActionMode(mode: ActionMode, menu: Menu): Boolean {
+                mode.setTitle("Options")
+                mode.getMenuInflater().inflate(R.menu.menu_context, menu)
+                return true
+            }
+        }
+
+
         return binding.root
 
     }

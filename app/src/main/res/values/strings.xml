@@ -20,4 +20,8 @@
     <string name="agente_todos">Todos</string>
     <string name="agente_atacantes">Atacantes</string>
     <string name="agente_defensores">Defensores</string>
+
+    <!-- Strings menu listas -->
+    <string name="editar">Editar</string>
+    <string name="eliminar">Eliminar</string>
 </resources>
