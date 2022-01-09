@@ -10,7 +10,7 @@ import org.w3c.dom.Text
 
 class TacticasCardAdapter(var items: ArrayList<TacticasCard>) : RecyclerView.Adapter<TacticasCardAdapter.TarjViewHolder>() {
 //    lateinit var onClick : (View) -> Unit
-    lateinit var onLongClick : (View) -> Unit
+    //lateinit var onLongClick : (View) -> Unit
 
 
     class TarjViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnCreateContextMenuListener {
@@ -32,7 +32,7 @@ class TacticasCardAdapter(var items: ArrayList<TacticasCard>) : RecyclerView.Ada
             itemView.setOnCreateContextMenuListener(this)
         }
 
-        fun bindCards(t: TacticasCard, onLongClick: (View) -> Unit) = with(itemView) {
+        fun bindCards(t: TacticasCard) {
             nombreTactica.text = t.nTactica
             nombreMapa.text = t.nMapa
             nombreAgente.text = t.nAgente
@@ -46,7 +46,7 @@ class TacticasCardAdapter(var items: ArrayList<TacticasCard>) : RecyclerView.Ada
             val imgBmpMapa = BitmapFactory.decodeByteArray(mapa, 0, mapa.size)
             imgMapa.setImageBitmap(imgBmpMapa)
 
-            setOnClickListener { onLongClick(itemView) }
+            //setOnClickListener { onLongClick(itemView) }
         }
 
         override fun onCreateContextMenu(contextMenu: ContextMenu, view: View, contextMenuInfo: ContextMenu.ContextMenuInfo?) {
@@ -62,7 +62,7 @@ class TacticasCardAdapter(var items: ArrayList<TacticasCard>) : RecyclerView.Ada
 
     override fun onBindViewHolder(viewHolder: TarjViewHolder, pos: Int) {
         val itemCard = items[pos]
-        viewHolder.bindCards(itemCard,onLongClick)
+        viewHolder.bindCards(itemCard)
 
 //        viewHolder.itemView.setOnLongClickListener {
 //            when (item.itemId) {
